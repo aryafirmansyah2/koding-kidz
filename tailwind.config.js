@@ -14,7 +14,7 @@ module.exports = {
       },
 
       boxShadow: {
-        'custom-shadow': '0px 16px 32px -4px rgba(12, 12, 12, 0.1)',
+        'main-shadow': '0px 16px 32px -4px rgba(12, 12, 12, 0.1)',
       },
 
       backgroundImage: {
