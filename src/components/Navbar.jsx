@@ -135,7 +135,7 @@ const Navbar = () => {
             </ul>
             <div className="mt-8">
               <Link
-                href="/daftar"
+                href="/register"
                 className="text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300 w-full text-center block"
               >
                 Daftar
