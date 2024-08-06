@@ -5,6 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import ProgramCard from "@/components/ProgramCard";
+import AgeSelectionModal from "@/components/AgeSelectionModal";
+import AgeButton from "@/components/AgeButton";
 
 const ProgramPage = () => {
   const [selectedAge, setSelectedAge] = useState(null);
@@ -72,15 +75,12 @@ const ProgramPage = () => {
           <p className="text-xl font-bold mb-4">Pilih Umur</p>
           <div className="flex gap-4 overflow-x-auto pb-4">
             {ages.map((age, index) => (
-              <div
+              <AgeButton
                 key={index}
-                className={`w-full rounded-md py-2 px-4 text-center border-2 cursor-pointer hover:bg-blue-500 hover:text-white transition-all duration-300 inline-block ${
-                  selectedAge === age ? "bg-blue-500 text-white" : ""
-                }`}
-                onClick={() => handleAgeClick(age)}
-              >
-                <p>{age}</p>
-              </div>
+                age={age}
+                selectedAge={selectedAge}
+                handleAgeClick={handleAgeClick}
+              />
             ))}
           </div>
         </div>
@@ -95,35 +95,7 @@ const ProgramPage = () => {
               {programs
                 .filter((program) => program.age === selectedAge)
                 .map((program, index) => (
-                  <div
-                    key={index}
-                    className="p-4 rounded-xl border-2 hover:shadow-lg transition-all duration-300"
-                  >
-                    <div className="flex items-center mb-4">
-                      <Image
-                        src="/assets/kelas-1.png"
-                        alt="Program Image"
-                        className="w-16 h-16 mr-4 object-cover rounded-lg"
-                        width={64}
-                        height={64}
-                      />
-                      <p className="font-bold">{program.title}</p>
-                    </div>
-                    <p className="text-gray-600 mb-4">{program.description}</p>
-                    <div className="flex justify-between">
-                      <Link
-                        href={`/program/${program.age}/${encodeURIComponent(
-                          program.title
-                        )}`}
-                        className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all duration-300"
-                      >
-                        Detail
-                      </Link>
-                      <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-300">
-                        Langganan
-                      </button>
-                    </div>
-                  </div>
+                  <ProgramCard key={index} program={program} />
                 ))}
             </div>
           </div>
@@ -138,25 +110,12 @@ const ProgramPage = () => {
 
       {/* Modal Pop-up */}
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-6 rounded-xl shadow-lg max-w-sm w-full">
-            <h2 className="text-xl font-bold mb-4 text-center">Pilih Umur</h2>
-            <p className="mb-4 text-center">
-              Silakan pilih umur untuk melihat program belajar yang tersedia.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              {ages.map((age, index) => (
-                <div
-                  key={index}
-                  className="w-24 rounded-md py-2 text-center border-2 cursor-pointer hover:bg-blue-500 hover:text-white transition-all duration-300"
-                  onClick={() => handleAgeClick(age)}
-                >
-                  <p>{age}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <AgeSelectionModal
+          ages={ages}
+          selectedAge={selectedAge}
+          handleAgeClick={handleAgeClick}
+          setShowModal={setShowModal}
+        />
       )}
 
       <Footer />
