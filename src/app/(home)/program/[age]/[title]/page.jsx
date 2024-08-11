@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { useParams } from "next/navigation";
+import React, { useState } from "react";
+import { useParams, useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
@@ -9,6 +9,56 @@ import { FaCheck, FaArrowRight } from "react-icons/fa";
 
 const ProgramDetail = () => {
   const { age, title } = useParams();
+  const router = useRouter();
+  const [selectedLevel, setSelectedLevel] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [showCartNotification, setShowCartNotification] = useState(false);
+
+  const handleLevelClick = (level) => {
+    setSelectedLevel(level === selectedLevel ? null : level);
+  };
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  const handleSaveToCart = () => {
+    // Logic to save the program to cart
+    // For example, using localStorage or an API call to save the item to the user's cart
+    setShowCartNotification(true);
+  };
+
+  const handleViewCart = () => {
+    setShowCartNotification(false);
+    router.push("/keranjang"); // Redirect to the cart page
+  };
+
+  const levelDetails = [
+    {
+      title: "Pengenalan Scratch",
+      videoId: "VIDEO_ID_1", // Replace with actual YouTube video IDs
+      description:
+        "Pengenalan dasar-dasar Scratch, termasuk antarmuka dan alat dasar yang digunakan.",
+    },
+    {
+      title: "Membuat Animasi",
+      videoId: "VIDEO_ID_2",
+      description:
+        "Cara membuat animasi sederhana menggunakan Scratch, termasuk penggunaan sprite dan latar belakang.",
+    },
+    {
+      title: "Membuat Game",
+      videoId: "VIDEO_ID_3",
+      description:
+        "Langkah-langkah untuk membuat game interaktif dengan Scratch, termasuk logika permainan dan kontrol.",
+    },
+    {
+      title: "Proyek Akhir",
+      videoId: "VIDEO_ID_4",
+      description:
+        "Proyek akhir untuk mengaplikasikan semua yang telah dipelajari dalam satu proyek besar.",
+    },
+  ];
 
   return (
     <div>
@@ -79,7 +129,10 @@ const ProgramDetail = () => {
               Paket Belajar Scratch Untuk Pemula
             </p>
             <p className="text-lg font-bold mb-5">Rp99.000</p>
-            <div className="flex items-center justify-between bg-blue-500 p-4 rounded-lg text-white mb-5 cursor-pointer">
+            <div
+              className="flex items-center justify-between bg-blue-500 p-4 rounded-lg text-white mb-5 cursor-pointer"
+              onClick={toggleModal}
+            >
               <p className="font-medium">Pilih Metode Pembayaran</p>
               <FaArrowRight />
             </div>
@@ -98,7 +151,10 @@ const ProgramDetail = () => {
             <button className="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 hover:bg-blue-600 transition-all duration-300">
               Lanjut Bayar
             </button>
-            <button className="w-full bg-gray-200 text-gray-700 py-3 rounded-lg hover:bg-gray-300 transition-all duration-300">
+            <button
+              className="w-full bg-gray-200 text-gray-700 py-3 rounded-lg hover:bg-gray-300 transition-all duration-300"
+              onClick={handleSaveToCart}
+            >
               Simpan ke Keranjang
             </button>
           </div>
@@ -113,7 +169,7 @@ const ProgramDetail = () => {
             <p className="mb-5">
               Mengenalkan dasar coding melalui bahasa pemrograman visual dengan
               platform ScratchJr, anak akan membuat karya digital berupa story,
-              animasi, hingga game
+              animasi, hingga game.
             </p>
             <div className="flex gap-4 overflow-x-auto whitespace-nowrap">
               <Image
@@ -150,22 +206,44 @@ const ProgramDetail = () => {
               animasi, hingga game.
             </p>
             <div className="space-y-4">
-              {[
-                "Pengenalan Scratch",
-                "Membuat Animasi",
-                "Membuat Game",
-                "Proyek Akhir",
-              ].map((item, index) => (
-                <div key={index} className="flex gap-3 items-center">
-                  <div className="bg-blue-500 w-12 h-12 rounded-full flex items-center justify-center">
-                    <p className="text-white font-bold">{index + 1}</p>
+              {levelDetails.map((level, index) => (
+                <div key={index} className="border-2 rounded-lg mb-4">
+                  <div
+                    className="flex justify-between items-center cursor-pointer border-b-2 p-4"
+                    onClick={() => handleLevelClick(level.title)}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="bg-blue-500 w-12 h-12 rounded-full flex items-center justify-center">
+                        <p className="text-white font-bold">{index + 1}</p>
+                      </div>
+                      <p className="font-medium">{level.title}</p>
+                    </div>
+                    <FaArrowRight
+                      className={`transform transition-transform ${
+                        selectedLevel === level.title ? "rotate-90" : ""
+                      }`}
+                    />
                   </div>
-                  <div className="flex w-full items-center justify-between p-4 rounded-lg border-2">
-                    <p>
-                      Level {index + 1} : {item}
-                    </p>
-                    <FaArrowRight />
-                  </div>
+                  {selectedLevel === level.title && (
+                    <div className="p-4 border-t-0">
+                      <div className="flex flex-col lg:flex-row">
+                        <div className="w-full lg:w-1/2 mb-4 lg:mb-0 lg:pr-4">
+                          <div className="relative aspect-w-16 aspect-h-9">
+                            <iframe
+                              className="w-full h-full rounded-lg"
+                              src={`https://www.youtube.com/embed/${level.videoId}`}
+                              title={level.title}
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            ></iframe>
+                          </div>
+                        </div>
+                        <div className="w-full lg:w-1/2">
+                          <p>{level.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -173,6 +251,72 @@ const ProgramDetail = () => {
         </div>
       </div>
       <Footer />
+
+      {/* Payment Method Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-5 rounded-lg shadow-lg w-full max-w-md relative">
+            <button
+              className="absolute top-2 right-2 text-gray-600"
+              onClick={toggleModal}
+            >
+              &times;
+            </button>
+            <h2 className="text-xl font-semibold mb-4">
+              Pilih Metode Pembayaran
+            </h2>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 cursor-pointer">
+                <input type="radio" name="payment" id="payment1" />
+                <label htmlFor="payment1" className="cursor-pointer">
+                  Transfer Bank
+                </label>
+              </div>
+              <div className="flex items-center gap-3 cursor-pointer">
+                <input type="radio" name="payment" id="payment2" />
+                <label htmlFor="payment2" className="cursor-pointer">
+                  Kartu Kredit/Debit
+                </label>
+              </div>
+              <div className="flex items-center gap-3 cursor-pointer">
+                <input type="radio" name="payment" id="payment3" />
+                <label htmlFor="payment3" className="cursor-pointer">
+                  E-Wallet
+                </label>
+              </div>
+            </div>
+            <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all duration-300">
+              Lanjutkan
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Cart Notification Modal */}
+      {showCartNotification && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-5 rounded-lg shadow-lg w-full max-w-md relative">
+            <button
+              className="absolute top-2 right-2 text-gray-600"
+              onClick={() => setShowCartNotification(false)}
+            >
+              &times;
+            </button>
+            <h2 className="text-xl font-semibold mb-4">
+              Berhasil Menyimpan ke Keranjang
+            </h2>
+            <p className="mb-4">
+              Program belajar telah berhasil disimpan ke keranjang.
+            </p>
+            <button
+              className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all duration-300 w-full"
+              onClick={handleViewCart}
+            >
+              Lihat Keranjang
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
