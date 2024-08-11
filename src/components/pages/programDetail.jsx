@@ -173,14 +173,14 @@ const ProgramDetailPage = ({ params }) => {
             </p>
             <div className="flex gap-4 overflow-x-auto whitespace-nowrap">
               <Image
-                src="./assets/proyek-1.png"
+                src="../assets/proyek-1.png"
                 alt="Proyek 1"
                 className="w-56 h-32 object-cover rounded-lg"
                 width={128}
                 height={128}
               />
               <Image
-                src="./assets/proyek-1.png"
+                src="/assets/proyek-1.png"
                 alt="Proyek 2"
                 className="w-56 h-32 object-cover rounded-lg"
                 width={128}
