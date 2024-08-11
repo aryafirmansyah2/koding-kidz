@@ -265,8 +265,8 @@ const HomePage = () => {
                   {testimonial.feedback}
                 </p>
                 <div className="flex justify-center gap-3 mt-3 text-[#F9D131] text-[20px]">
-                  {[...Array(5)].map((_) => (
-                    <FaStar />
+                  {[...Array(5)].map((_,i) => (
+                    <FaStar key={i} />
                   ))}
                 </div>
               </div>
