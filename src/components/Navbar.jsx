@@ -61,7 +61,7 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center space-x-4">
           <FiShoppingCart className="text-secondaryText text-xl hover:text-primary transition-colors duration-300" />
           <Link
-            href="/register"
+            href="/daftar"
             className="text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300 w-full text-center block"
           >
             Daftar
