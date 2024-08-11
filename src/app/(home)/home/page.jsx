@@ -1,7 +1,7 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Image from "next/image";
-import React from "react";
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Image from 'next/image';
+import React from 'react';
 
 import {
   FaBook,
@@ -10,94 +10,94 @@ import {
   FaVideo,
   FaGraduationCap,
   FaComment,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 
 const HomePage = () => {
   const services = [
     {
       icon: <FaBook />,
-      title: "Belajar Interaktif",
+      title: 'Belajar Interaktif',
       description:
-        "Pelajari coding dengan metode interaktif yang menyenangkan.",
+        'Pelajari coding dengan metode interaktif yang menyenangkan.',
     },
     {
       icon: <FaStar />,
-      title: "Program Unggulan",
+      title: 'Program Unggulan',
       description:
-        "Ikuti program-program unggulan kami untuk pengalaman belajar yang optimal.",
+        'Ikuti program-program unggulan kami untuk pengalaman belajar yang optimal.',
     },
     {
       icon: <FaGamepad />,
-      title: "Tutor Menyenangkan",
+      title: 'Tutor Menyenangkan',
       description:
-        "Belajar bersama tutor yang menyenangkan dan mudah untuk dipahami, khusus untuk kamu.",
+        'Belajar bersama tutor yang menyenangkan dan mudah untuk dipahami, khusus untuk kamu.',
     },
   ];
 
   const features = [
     {
       icon: <FaVideo />,
-      title: "Video Pembelajaran Interaktif",
+      title: 'Video Pembelajaran Interaktif',
       description:
-        "Video pembelajaran seru dengan tutor yang seru dan menyenangkan",
+        'Video pembelajaran seru dengan tutor yang seru dan menyenangkan',
     },
     {
       icon: <FaComment />,
-      title: "Forum Diskusi dengan Tutor",
-      description: "Diskusi bersama tutor untuk masalah belajar anak.",
+      title: 'Forum Diskusi dengan Tutor',
+      description: 'Diskusi bersama tutor untuk masalah belajar anak.',
     },
     {
       icon: <FaGamepad />,
-      title: "Pembelajaran Berbasis Proyek",
+      title: 'Pembelajaran Berbasis Proyek',
       description:
-        "Tugas akhir berbasis proyek sederhana dan menyenangkan untuk klaim sertifikat",
+        'Tugas akhir berbasis proyek sederhana dan menyenangkan untuk klaim sertifikat',
     },
     {
       icon: <FaGraduationCap />,
-      title: "Kuis Asah Kemampuan Anak",
-      description: "Kuis untuk menunjang kemampuan anak dalam belajar",
+      title: 'Kuis Asah Kemampuan Anak',
+      description: 'Kuis untuk menunjang kemampuan anak dalam belajar',
     },
   ];
 
   const programs = [
     {
-      title: "Belajar Scratch Untuk Pemula",
+      title: 'Belajar Scratch Untuk Pemula',
       description:
-        "Belajar Scratch untuk usia 9-12 tahun dengan membuat game sederhana",
-      image: "/assets/kelas-1.png",
+        'Belajar Scratch untuk usia 9-12 tahun dengan membuat game sederhana',
+      image: '/assets/kelas-1.png',
     },
     {
-      title: "Minecraft Education",
+      title: 'Minecraft Education',
       description:
-        "Memahami dasar-dasar pemrograman Python untuk anak usia 12-15 tahun",
-      image: "/assets/kelas-2.png",
+        'Memahami dasar-dasar pemrograman Python untuk anak usia 12-15 tahun',
+      image: '/assets/kelas-2.png',
     },
     {
-      title: "Roblox Studio",
+      title: 'Roblox Studio',
       description:
-        "Membangun situs web sederhana dengan HTML dan CSS untuk anak usia 10-13 tahun",
-      image: "/assets/kelas-3.png",
+        'Membangun situs web sederhana dengan HTML dan CSS untuk anak usia 10-13 tahun',
+      image: '/assets/kelas-3.png',
     },
   ];
 
   const testimonials = [
     {
-      name: "Adinda Maharani",
+      name: 'Adinda Maharani',
       feedback:
-        "Anak saya senang sekali belajar tentang pemrograman di KodingKidz. Saya ingin merekomendasikan ke orang tua lainnya untuk mulai belajar pemrograman untuk anak Anda!",
-      image: "/assets/testimoni-1.png",
+        'Anak saya senang sekali belajar tentang pemrograman di KodingKidz. Saya ingin merekomendasikan ke orang tua lainnya untuk mulai belajar pemrograman untuk anak Anda!',
+      image: '/assets/testimoni-1.png',
     },
     {
-      name: "Brandon Salim",
+      name: 'Brandon Salim',
       feedback:
-        "Anak saya senang sekali belajar tentang pemrograman di KodingKidz. Saya ingin merekomendasikan ke orang tua lainnya untuk mulai belajar pemrograman untuk anak Anda!",
-      image: "/assets/testimoni-2.png",
+        'Anak saya senang sekali belajar tentang pemrograman di KodingKidz. Saya ingin merekomendasikan ke orang tua lainnya untuk mulai belajar pemrograman untuk anak Anda!',
+      image: '/assets/testimoni-2.png',
     },
     {
-      name: "Alexandria Miranda",
+      name: 'Alexandria Miranda',
       feedback:
-        "Anak saya senang sekali belajar tentang pemrograman di KodingKidz. Saya ingin merekomendasikan ke orang tua lainnya untuk mulai belajar pemrograman untuk anak Anda!",
-      image: "/assets/testimoni-3.png",
+        'Anak saya senang sekali belajar tentang pemrograman di KodingKidz. Saya ingin merekomendasikan ke orang tua lainnya untuk mulai belajar pemrograman untuk anak Anda!',
+      image: '/assets/testimoni-3.png',
     },
   ];
 
@@ -124,7 +124,7 @@ const HomePage = () => {
             </div>
           </div>
           <Image
-            src="/assets/landing-page-1.png" // Path relative to `public`
+            src="./assets/landing-page-1.png" // Path relative to `public`
             alt="Foto Say Hello"
             className="w-3/6 lg:w-2/5 object-cover"
             width={500} // Adjust width as needed
@@ -163,7 +163,7 @@ const HomePage = () => {
           <div className="w-full lg:w-1/2">
             <div className="mb-4">
               <p className="text-2xl font-bold text-primaryText">
-                <span className="font-bold text-primary">Lebih Sekadar</span>{" "}
+                <span className="font-bold text-primary">Lebih Sekadar</span>{' '}
                 Belajar Coding
               </p>
               <p className="mt-3 text-secondaryText">
@@ -265,7 +265,7 @@ const HomePage = () => {
                   {testimonial.feedback}
                 </p>
                 <div className="flex justify-center gap-3 mt-3 text-[#F9D131] text-[20px]">
-                  {[...Array(5)].map((_,i) => (
+                  {[...Array(5)].map((_, i) => (
                     <FaStar key={i} />
                   ))}
                 </div>
