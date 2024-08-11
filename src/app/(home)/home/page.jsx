@@ -64,19 +64,19 @@ const HomePage = () => {
       title: 'Belajar Scratch Untuk Pemula',
       description:
         'Belajar Scratch untuk usia 9-12 tahun dengan membuat game sederhana',
-      image: '/assets/kelas-1.png',
+      image: './assets/kelas-1.png',
     },
     {
       title: 'Minecraft Education',
       description:
         'Memahami dasar-dasar pemrograman Python untuk anak usia 12-15 tahun',
-      image: '/assets/kelas-2.png',
+      image: './assets/kelas-2.png',
     },
     {
       title: 'Roblox Studio',
       description:
         'Membangun situs web sederhana dengan HTML dan CSS untuk anak usia 10-13 tahun',
-      image: '/assets/kelas-3.png',
+      image: './assets/kelas-3.png',
     },
   ];
 
@@ -85,19 +85,19 @@ const HomePage = () => {
       name: 'Adinda Maharani',
       feedback:
         'Anak saya senang sekali belajar tentang pemrograman di KodingKidz. Saya ingin merekomendasikan ke orang tua lainnya untuk mulai belajar pemrograman untuk anak Anda!',
-      image: '/assets/testimoni-1.png',
+      image: './assets/testimoni-1.png',
     },
     {
       name: 'Brandon Salim',
       feedback:
         'Anak saya senang sekali belajar tentang pemrograman di KodingKidz. Saya ingin merekomendasikan ke orang tua lainnya untuk mulai belajar pemrograman untuk anak Anda!',
-      image: '/assets/testimoni-2.png',
+      image: './assets/testimoni-2.png',
     },
     {
       name: 'Alexandria Miranda',
       feedback:
         'Anak saya senang sekali belajar tentang pemrograman di KodingKidz. Saya ingin merekomendasikan ke orang tua lainnya untuk mulai belajar pemrograman untuk anak Anda!',
-      image: '/assets/testimoni-3.png',
+      image: './assets/testimoni-3.png',
     },
   ];
 
@@ -153,7 +153,7 @@ const HomePage = () => {
 
         <div className="container mx-auto p-4 mt-24 flex flex-col lg:flex-row items-center gap-5 justify-between">
           <Image
-            src="/assets/landing-page-2.png" // Path relative to `public`
+            src="./assets/landing-page-2.png" // Path relative to `public`
             alt="Foto Say Hello"
             className="w-3/6 lg:w-2/5 object-cover"
             width={500} // Adjust width as needed
