@@ -11,6 +11,7 @@ import {
   FaReply,
 } from "react-icons/fa";
 import { useState } from "react";
+import Image from "next/image";
 
 function Belajar() {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
@@ -192,7 +193,9 @@ function Belajar() {
               {comments.map((comment) => (
                 <div key={comment.id} className="mb-6">
                   <div className="flex items-start gap-4">
-                    <img
+                    <Image
+                    width={0}
+                    height={0}
                       src={comment.profilePic}
                       alt="Profile"
                       className="w-12 h-12 rounded-full object-cover"
@@ -244,7 +247,9 @@ function Belajar() {
                             key={reply.id}
                             className="flex items-start gap-4 mb-4"
                           >
-                            <img
+                            <Image
+                            width={0}
+                            height={0}
                               src={reply.profilePic}
                               alt="Profile"
                               className="w-10 h-10 rounded-full object-cover"
