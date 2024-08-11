@@ -1,18 +1,18 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const ProgramCard = ({ program }) => {
   return (
     <Link
       href={`/program/${program.age}/${encodeURIComponent(
-        program.title.replace(/ /g, "-")
+        program.title.replace(/ /g, '-')
       )}`}
     >
       <div className="p-4 rounded-xl border-2 hover:shadow-lg transition-all duration-300 cursor-pointer">
         <div className="flex items-center mb-4">
           <Image
-            src="/assets/kelas-1.png"
+            src="./assets/kelas-1.png"
             alt="Program Image"
             className="w-16 h-16 mr-4 object-cover rounded-lg"
             width={64}

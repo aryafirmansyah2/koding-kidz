@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Image from "next/image";
-import { FaTrash } from "react-icons/fa";
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Image from 'next/image';
+import { FaTrash } from 'react-icons/fa';
 
 const Keranjang = () => {
   const router = useRouter();
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
-      title: "Pengenalan Scratch",
-      age: "5-7 Tahun",
+      title: 'Pengenalan Scratch',
+      age: '5-7 Tahun',
       price: 99000,
-      duration: "3 Bulan",
-      level: "Pemula",
+      duration: '3 Bulan',
+      level: 'Pemula',
     },
     {
       id: 2,
-      title: "Pengenalan Scratch",
-      age: "5-7 Tahun",
+      title: 'Pengenalan Scratch',
+      age: '5-7 Tahun',
       price: 99000,
-      duration: "3 Bulan",
-      level: "Pemula",
+      duration: '3 Bulan',
+      level: 'Pemula',
     },
     // Add more items as needed
   ]);
@@ -87,7 +87,7 @@ const Keranjang = () => {
                   />
                   <div className="flex-1 flex items-center">
                     <Image
-                      src="/assets/kelas-1.png"
+                      src="./assets/kelas-1.png"
                       alt="Program Image"
                       className="w-16 h-16 object-cover rounded-lg mr-4"
                       width={64}

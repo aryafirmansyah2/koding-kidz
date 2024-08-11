@@ -80,7 +80,7 @@ const ProgramDetailPage = ({ params }) => {
             </div>
             <div className="flex items-center mb-5">
               <Image
-                src="/assets/kelas-1.png"
+                src="./assets/kelas-1.png"
                 alt="Program Image"
                 className="w-16 h-16 mr-4 object-cover rounded-lg"
                 width={64}
@@ -173,21 +173,21 @@ const ProgramDetailPage = ({ params }) => {
             </p>
             <div className="flex gap-4 overflow-x-auto whitespace-nowrap">
               <Image
-                src="/assets/proyek-1.png"
+                src="./assets/proyek-1.png"
                 alt="Proyek 1"
                 className="w-56 h-32 object-cover rounded-lg"
                 width={128}
                 height={128}
               />
               <Image
-                src="/assets/proyek-1.png"
+                src="./assets/proyek-1.png"
                 alt="Proyek 2"
                 className="w-56 h-32 object-cover rounded-lg"
                 width={128}
                 height={128}
               />
               <Image
-                src="/assets/proyek-1.png"
+                src="./assets/proyek-1.png"
                 alt="Proyek 3"
                 className="w-56 h-32 object-cover rounded-lg"
                 width={128}

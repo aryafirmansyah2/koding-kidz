@@ -1,26 +1,26 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import ProgramCard from "@/components/ProgramCard";
-import AgeSelectionModal from "@/components/AgeSelectionModal";
-import AgeButton from "@/components/AgeButton";
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import ProgramCard from '@/components/ProgramCard';
+import AgeSelectionModal from '@/components/AgeSelectionModal';
+import AgeButton from '@/components/AgeButton';
 
 const ProgramPage = () => {
   const [selectedAge, setSelectedAge] = useState(null);
   const [showModal, setShowModal] = useState(true);
 
   const ages = [
-    "9 Tahun",
-    "10 Tahun",
-    "11 Tahun",
-    "12 Tahun",
-    "13 Tahun",
-    "14 Tahun",
-    "15 Tahun",
+    '9 Tahun',
+    '10 Tahun',
+    '11 Tahun',
+    '12 Tahun',
+    '13 Tahun',
+    '14 Tahun',
+    '15 Tahun',
   ];
 
   const handleAgeClick = (age) => {
@@ -30,14 +30,14 @@ const ProgramPage = () => {
 
   const programs = [
     {
-      age: "9 Tahun",
-      title: "Belajar Scratch Untuk Pemula",
-      description: "Belajar Scratch untuk pemula untuk usia 9-12 tahun",
+      age: '9 Tahun',
+      title: 'Belajar Scratch Untuk Pemula',
+      description: 'Belajar Scratch untuk pemula untuk usia 9-12 tahun',
     },
     {
-      age: "10 Tahun",
-      title: "Belajar Scratch Untuk Pemula",
-      description: "Belajar Scratch untuk pemula untuk usia 9-12 tahun",
+      age: '10 Tahun',
+      title: 'Belajar Scratch Untuk Pemula',
+      description: 'Belajar Scratch untuk pemula untuk usia 9-12 tahun',
     },
     // Tambahkan program lainnya sesuai kebutuhan
   ];
@@ -62,7 +62,7 @@ const ProgramPage = () => {
             </div>
           </div>
           <Image
-            src="/assets/landing-page-1.png"
+            src="./assets/landing-page-1.png"
             alt="Foto Say Hello"
             className="w-full lg:w-2/5 object-cover"
             width={800}

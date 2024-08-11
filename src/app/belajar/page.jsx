@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 import {
   FaPlay,
   FaCheck,
@@ -9,34 +9,34 @@ import {
   FaChevronUp,
   FaThumbsUp,
   FaReply,
-} from "react-icons/fa";
-import { useState } from "react";
-import Image from "next/image";
+} from 'react-icons/fa';
+import { useState } from 'react';
+import Image from 'next/image';
 
 function Belajar() {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [comments, setComments] = useState([
     {
       id: 1,
-      profilePic: "/assets/profile1.jpg",
-      username: "Hendrik",
-      time: "1 jam yang lalu",
-      text: "Saya ingin bertanya, saya tidak paham tentang bagaimana mengatur suara di Scratch",
+      profilePic: './assets/profile1.jpg',
+      username: 'Hendrik',
+      time: '1 jam yang lalu',
+      text: 'Saya ingin bertanya, saya tidak paham tentang bagaimana mengatur suara di Scratch',
       likes: 5,
       replies: [
         {
           id: 1,
-          profilePic: "/assets/profile2.jpg",
-          username: "Tutor",
-          time: "30 menit yang lalu",
+          profilePic: './assets/profile2.jpg',
+          username: 'Tutor',
+          time: '30 menit yang lalu',
           text: "Untuk mengatur suara, buka tab 'Sounds' dan pilih opsi yang Anda inginkan.",
         },
       ],
     },
   ]);
-  const [newComment, setNewComment] = useState("");
+  const [newComment, setNewComment] = useState('');
   const [isReplying, setIsReplying] = useState(null);
-  const [replyText, setReplyText] = useState("");
+  const [replyText, setReplyText] = useState('');
 
   const handleCommentChange = (e) => setNewComment(e.target.value);
   const handleCommentSubmit = () => {
@@ -45,15 +45,15 @@ function Belajar() {
         ...comments,
         {
           id: comments.length + 1,
-          profilePic: "/assets/profile1.jpg",
-          username: "User",
-          time: "Sekarang",
+          profilePic: './assets/profile1.jpg',
+          username: 'User',
+          time: 'Sekarang',
           text: newComment,
           likes: 0,
           replies: [],
         },
       ]);
-      setNewComment("");
+      setNewComment('');
     }
   };
 
@@ -69,9 +69,9 @@ function Belajar() {
                   ...comment.replies,
                   {
                     id: comment.replies.length + 1,
-                    profilePic: "/assets/profile2.jpg",
-                    username: "User",
-                    time: "Sekarang",
+                    profilePic: './assets/profile2.jpg',
+                    username: 'User',
+                    time: 'Sekarang',
                     text: replyText,
                   },
                 ],
@@ -79,7 +79,7 @@ function Belajar() {
             : comment
         )
       );
-      setReplyText("");
+      setReplyText('');
       setIsReplying(null);
     }
   };
@@ -121,7 +121,7 @@ function Belajar() {
                 <p className="text-lg font-bold">Deskripsi Video</p>
                 <p className="mt-2 text-gray-700">
                   {isDescriptionExpanded
-                    ? "Petualangan Pertama dengan Scratch adalah pengantar yang menyenangkan untuk pemrograman dasar. Dalam video ini, Anda akan belajar tentang konsep dasar Scratch dan membuat proyek pertama Anda. Teruslah eksplorasi dan temukan lebih banyak fitur di Scratch!"
+                    ? 'Petualangan Pertama dengan Scratch adalah pengantar yang menyenangkan untuk pemrograman dasar. Dalam video ini, Anda akan belajar tentang konsep dasar Scratch dan membuat proyek pertama Anda. Teruslah eksplorasi dan temukan lebih banyak fitur di Scratch!'
                     : "Petualangan Pertama dengan Scratch adalah pengantar yang menyenangkan untuk pemrograman dasar. Klik 'Selengkapnya' untuk melihat deskripsi lengkap."}
                 </p>
                 <button
@@ -132,8 +132,8 @@ function Belajar() {
                 >
                   {isDescriptionExpanded ? <FaChevronUp /> : <FaChevronDown />}
                   {isDescriptionExpanded
-                    ? "Lihat Lebih Sedikit"
-                    : "Selengkapnya"}
+                    ? 'Lihat Lebih Sedikit'
+                    : 'Selengkapnya'}
                 </button>
               </div>
             </div>
@@ -194,8 +194,8 @@ function Belajar() {
                 <div key={comment.id} className="mb-6">
                   <div className="flex items-start gap-4">
                     <Image
-                    width={0}
-                    height={0}
+                      width={0}
+                      height={0}
                       src={comment.profilePic}
                       alt="Profile"
                       className="w-12 h-12 rounded-full object-cover"
@@ -248,8 +248,8 @@ function Belajar() {
                             className="flex items-start gap-4 mb-4"
                           >
                             <Image
-                            width={0}
-                            height={0}
+                              width={0}
+                              height={0}
                               src={reply.profilePic}
                               alt="Profile"
                               className="w-10 h-10 rounded-full object-cover"
